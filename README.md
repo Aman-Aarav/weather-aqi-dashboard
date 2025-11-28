@@ -14,8 +14,8 @@ Weather Dashboard
                 Date & digital clock display
                 
 Air Quality Dashboard
-https://github.com/user-attachments/assets/d53eb1ca-32a9-48e2-9df5-ca03285f59e5
 
+https://github.com/user-attachments/assets/1a1611cb-cbac-4536-9120-e89093ba8bb1
 
                 Real-time AQI value
                 Main pollutant (e.g., PM2.5)
