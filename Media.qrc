@@ -1,0 +1,19 @@
+<RCC>
+    <qresource prefix="/Images"/>
+    <qresource prefix="/">
+        <file>Images/snowfall.png</file>
+        <file>Images/storm.png</file>
+        <file>Images/sun.png</file>
+        <file>Images/weather.png</file>
+        <file>Images/icons8-humidity-96.png</file>
+        <file>Images/icons8-uv-index-64.png</file>
+        <file>Images/icons8-wind-64.png</file>
+        <file>Images/uv-index.png</file>
+        <file>Images/icons8-pressure-64.png</file>
+        <file>Images/visibility (1).png</file>
+        <file>Images/visibility.png</file>
+        <file>Images/wind.png</file>
+        <file>Images/pressure.png</file>
+        <file>Images/icons8-search-50.png</file>
+    </qresource>
+</RCC>
