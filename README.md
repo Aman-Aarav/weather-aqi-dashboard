@@ -20,7 +20,8 @@ Air Quality Dashboard
                 Multi-color AQI gauge
                 AQI scale with categories (Good → Hazardous)
                 Smooth UI cards and animated components
-<img width="1876" height="871" alt="image" src="https://github.com/user-attachments/assets/6b6eccaf-5037-436e-9047-c138d804324d" />
+<img width="1912" height="887" alt="image" src="https://github.com/user-attachments/assets/07a19194-c4bf-4ac4-97cd-05c6083e57b2" />
+
 
 
 Daily Weather Dashboard (In Progress): Work in progress
