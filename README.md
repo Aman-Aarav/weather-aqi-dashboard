@@ -14,13 +14,14 @@ Weather Dashboard
                 Date & digital clock display
                 
 Air Quality Dashboard
+<img width="1912" height="887" alt="image" src="https://github.com/user-attachments/assets/e99a99d9-5ded-48df-8537-0f89f59554b7" />
 
                 Real-time AQI value
                 Main pollutant (e.g., PM2.5)
                 Multi-color AQI gauge
                 AQI scale with categories (Good → Hazardous)
                 Smooth UI cards and animated components
-<img width="1912" height="887" alt="image" src="https://github.com/user-attachments/assets/07a19194-c4bf-4ac4-97cd-05c6083e57b2" />
+
 
 
 
