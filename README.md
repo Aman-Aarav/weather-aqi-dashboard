@@ -25,7 +25,7 @@ https://github.com/user-attachments/assets/1a1611cb-cbac-4536-9120-e89093ba8bb1
                 Main pollutant (e.g., PM2.5)
                 Multi-color AQI gauge
                 AQI scale with categories (Good → Hazardous)
-                Smooth UI cards and animated components
+                Smooth UI and animated components
 
 
 
