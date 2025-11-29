@@ -14,6 +14,8 @@ Weather Dashboard
                 Visibility
                 Dynamic weather icons
                 Date & digital clock display
+                Sunset/Sunrise
+                Min/Max Temperature
                 
 Air Quality Dashboard
 
