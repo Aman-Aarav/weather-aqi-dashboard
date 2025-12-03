@@ -5,6 +5,8 @@ Qt-based desktop application that displays real-time weather, daily forecasts, a
 <br><br>
 
 
+
+
 Weather Dashboard
 <img width="1917" height="983" alt="image" src="https://github.com/user-attachments/assets/ddb09953-090e-4024-835a-35a323f9fe68" />
 
@@ -48,6 +50,8 @@ Daily Weather Dashboard
 <br><br>
 
 
+
+
 Air Quality Dashboard
 
 https://github.com/user-attachments/assets/1a1611cb-cbac-4536-9120-e89093ba8bb1
@@ -59,6 +63,10 @@ https://github.com/user-attachments/assets/1a1611cb-cbac-4536-9120-e89093ba8bb1
                 Smooth UI and animated components
 
 <br><br>
+
+
+
+
 
 API Services Used  
 This application uses two separate API services:
