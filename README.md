@@ -17,6 +17,23 @@ Weather Dashboard
                 Sunset/Sunrise
                 Min/Max Temperature
 
+Daily Weather Dashboard
+<img width="1915" height="978" alt="image" src="https://github.com/user-attachments/assets/d174f80c-5661-424d-8b3f-ff9ac66a483b" />
+
+5-Day / 3-Hour Forecast
+              
+                Each day has a dedicated button. (QButtonGroup)
+                Clicking a day:
+                    Filters forecast to show only that date
+                    Populates 8 forecast widgets (3-hour intervals)
+                    Updates "Feels Like vs Actual" chart for that day only
+                    Automatically handles incomplete days (sometimes 3–6 entries)
+                Dynamic Charts
+                    Actual Temperature vs Feels-Like (line chart)
+                    Min/Max Temperature comparison
+                    Auto-generates X-axis labels based on time
+                    Smooth anti-aliased rendering
+
 
                 
 Air Quality Dashboard
@@ -30,8 +47,45 @@ https://github.com/user-attachments/assets/1a1611cb-cbac-4536-9120-e89093ba8bb1
                 Smooth UI and animated components
 
 
+API Services Used  
+This application uses two separate API services:
+                
+                Weather Data - OpenWeatherMap API
+                Air Quality Index  - IQAir AirVisual API, retrieves Air Quality Index (AQI) data using the AirVisual “Nearest City” endpoint.
+
+Why Two APIs?
+Using two specialized APIs ensures:
+
+               More accurate weather data 
+               More detailed and precise AQI (via a dedicated air quality API)
+               Better pollutant breakdown
+               More reliability when one API has rate limiting or downtime
 
 
-Daily Weather Dashboard (In Progress): Work in progress
+Application Logic (Weather + AQI)
+
+        Weather Logic Flow
+              User enters a city
+              App requests weather + forecast from OWM
+              Parses values: temperature, wind, temperature, coordinates, etc
+              Forecast list is filtered by selected day
+              UI updates widgets + charts
+
+        AQI Logic Flow
+
+              App sends lat-lon data to AQI API: Get Coordinates from Weather API
+              These coordinates are then passed into the AirVisual API.
+              API returns pollutant concentrations
+              App converts values to:
+                 AQI value (US scale)
+                 AQI color category
+                 UI updates AQI indicator widget
+                 Dominant pollutant
+                 Health indicator (Good, Moderate, Unhealthy, etc.)
+                        
+
+
+
+
 
 
