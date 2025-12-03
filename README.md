@@ -17,6 +17,8 @@ Weather Dashboard
                 Sunset/Sunrise
                 Min/Max Temperature
 
+
+
 Daily Weather Dashboard
 <img width="1915" height="978" alt="image" src="https://github.com/user-attachments/assets/d174f80c-5661-424d-8b3f-ff9ac66a483b" />
 
