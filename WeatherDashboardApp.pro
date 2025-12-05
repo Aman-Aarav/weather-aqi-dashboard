@@ -10,6 +10,7 @@ CONFIG += c++17
 
 SOURCES += \
     circleicons.cpp \
+    forecastwidget.cpp \
     gauge.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -17,6 +18,7 @@ SOURCES += \
 
 HEADERS += \
     circleicons.h \
+    forecastwidget.h \
     gauge.h \
     mainwindow.h \
     weatherclient.h
