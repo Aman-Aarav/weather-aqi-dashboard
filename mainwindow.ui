@@ -1,0 +1,1340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(10, 15, 80);
+background-color: rgb(1, 20, 50);
+</string>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <property name="leftMargin">
+     <number>15</number>
+    </property>
+    <property name="rightMargin">
+     <number>15</number>
+    </property>
+    <property name="bottomMargin">
+     <number>15</number>
+    </property>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="0,0,0">
+        <property name="spacing">
+         <number>200</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="label">
+          <property name="minimumSize">
+           <size>
+            <width>100</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <item>
+           <widget class="QLineEdit" name="lineEditPlace">
+            <property name="styleSheet">
+             <string notr="true">
+    QLineEdit {
+       background-color: rgba(50, 150, 200, 0.40);
+color: #FFFFFF;
+border: 1px solid #404040;
+      
+            padding: 8px 15px;
+            font-size: 13px;
+
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    QLineEdit:hover {
+        
+        background-color: rgba(50, 80, 150, 0.20);
+    }</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="Searchbtn">
+            <property name="styleSheet">
+             <string notr="true">
+
+    QPushButton {
+image: url(:/Images/icons8-search-50.png);
+	background-color: rgb(184, 182, 183);
+border: 2px solid #404040;
+      
+            padding: 10px 8px;
+          
+
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    QPushButton:hover {
+        
+        background-color: rgba(184, 182, 183, 0.50);
+    }</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_14">
+          <property name="minimumSize">
+           <size>
+            <width>100</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QTabWidget" name="tabWidget_2">
+        <property name="styleSheet">
+         <string notr="true"> QTabWidget::pane {
+
+background-color: rgba(58, 134, 222, 0.21);
+
+     
+    }
+QTabBar::tab {
+    background:rgba(67, 97, 136, 1);
+    border: 0.5px solid #C4C4C3;
+
+    padding: 2px 50px;
+color: white;
+}
+
+QTabBar::tab:selected, QTabBar::tab:hover {
+   background-color: rgba(52, 148, 189, 1);
+ color: white;
+  border: 1px solid rgba(80, 255, 225, 1);
+  font-weight: bold;          /* Bold font for the selected tab */
+
+}
+
+QTabBar::tab:selected {
+    border: 1px solid rgba(0, 255, 225, 1);
+}
+
+QTabBar::tab:!selected {
+    margin-top: 2px; /* make non-selected tabs look smaller */
+}</string>
+        </property>
+        <property name="currentIndex">
+         <number>0</number>
+        </property>
+        <widget class="QWidget" name="tab_3">
+         <property name="styleSheet">
+          <string notr="true">border: none;
+
+
+background-color: rgba(50, 150, 220, 0.40);</string>
+         </property>
+         <attribute name="title">
+          <string>Today</string>
+         </attribute>
+         <layout class="QHBoxLayout" name="horizontalLayout_6" stretch="30,70">
+          <item>
+           <widget class="QWidget" name="widget_11" native="true">
+            <property name="styleSheet">
+             <string notr="true">
+       border: none;
+background-color: transparent;
+     </string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_5" stretch="10,75,15">
+             <item>
+              <widget class="QLabel" name="labelPlace">
+               <property name="styleSheet">
+                <string notr="true">border: none;
+color: rgb(177, 177, 177);
+background-color: transparent;
+font-size: 20px; font-weight: bold;
+</string>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QWidget" name="Weatherwidget" native="true">
+               <property name="styleSheet">
+                <string notr="true">background-color: transparent;
+border: none</string>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_3" stretch="25,45,25,5">
+                <property name="spacing">
+                 <number>0</number>
+                </property>
+                <property name="topMargin">
+                 <number>3</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>3</number>
+                </property>
+                <item>
+                 <widget class="QLabel" name="WeatherType">
+                  <property name="styleSheet">
+                   <string notr="true">border: none;
+color: rgb(98, 221, 255);
+background-color: transparent;
+font-size: 40px; font-weight: bold;</string>
+                  </property>
+                  <property name="text">
+                   <string>Weather</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="IconLabel">
+                  <property name="styleSheet">
+                   <string notr="true">border: none;
+
+background-color: transparent;
+</string>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="TempLabel">
+                  <property name="styleSheet">
+                   <string notr="true">border: none;
+background-color: transparent;
+font-size: 30px; font-weight: bold;
+color: rgb(98, 221, 255);</string>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="Feellikelabel">
+                  <property name="styleSheet">
+                   <string notr="true">border: none;
+background-color: transparent;
+font-size: 15px; font-weight: bold;
+color: rgb(177, 177, 177);</string>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QWidget" name="timedaywidget" native="true">
+               <property name="styleSheet">
+                <string notr="true">background-color: transparent;
+border: none;</string>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_4">
+                <item>
+                 <widget class="QLabel" name="Daylabel">
+                  <property name="styleSheet">
+                   <string notr="true">
+font-size: 15px; font-weight: bold;
+border: none;
+background-color: transparent;
+color: white;</string>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLCDNumber" name="lcdNumber">
+                  <property name="styleSheet">
+                   <string notr="true">background-color: transparent;</string>
+                  </property>
+                  <property name="digitCount">
+                   <number>8</number>
+                  </property>
+                  <property name="segmentStyle">
+                   <enum>QLCDNumber::Filled</enum>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QWidget" name="widget_6" native="true">
+            <property name="styleSheet">
+             <string notr="true">background-color: transparent;</string>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_3">
+             <item>
+              <layout class="QGridLayout" name="gridLayout_2">
+               <property name="spacing">
+                <number>20</number>
+               </property>
+               <item row="1" column="1">
+                <widget class="QWidget" name="widget_10" native="true">
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgba(255, 255, 255, 0.15);
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.3);</string>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_9">
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_9">
+                    <item>
+                     <widget class="QLabel" name="labelPlace_5">
+                      <property name="styleSheet">
+                       <string notr="true">border: none;
+background-color: transparent;
+font-size: 20px; font-weight: bold;
+color: rgb(177, 177, 177);</string>
+                      </property>
+                      <property name="text">
+                       <string>Visibility</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="label_7">
+                      <property name="styleSheet">
+                       <string notr="true">
+image: url(:/Images/icons8-visibility-100.png);
+
+border: none;
+background-color: transparent;
+</string>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_visiblilty">
+                    <property name="styleSheet">
+                     <string notr="true">border: none;
+background-color: transparent;
+font-size: 40px; font-weight: bold;
+color: rgb(98, 221, 255);</string>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="0" column="0">
+                <widget class="QWidget" name="widget_7" native="true">
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgba(255, 255, 255, 0.15);
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.3);</string>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_6">
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_4">
+                    <item>
+                     <widget class="QLabel" name="labelPlace_2">
+                      <property name="styleSheet">
+                       <string notr="true">border: none;
+background-color: transparent;
+font-size: 20px; font-weight: bold;
+color: rgb(177, 177, 177);</string>
+                      </property>
+                      <property name="text">
+                       <string>Humidity</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="label_2">
+                      <property name="styleSheet">
+                       <string notr="true">image: url(:/Images/icons8-humidity-96.png);
+border: none;
+background-color: transparent;
+</string>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="labelHumidity">
+                    <property name="styleSheet">
+                     <string notr="true">border: none;
+background-color: transparent;
+font-size: 40px; font-weight: bold;
+
+color: rgb(98, 221, 255);</string>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QWidget" name="widget_8" native="true">
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgba(255, 255, 255, 0.15);
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.3);</string>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_7">
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_7">
+                    <item>
+                     <widget class="QLabel" name="labelPlace_3">
+                      <property name="styleSheet">
+                       <string notr="true">border: none;
+background-color: transparent;
+font-size: 20px; font-weight: bold;
+color: rgb(177, 177, 177);</string>
+                      </property>
+                      <property name="text">
+                       <string>Pressure</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="label_3">
+                      <property name="styleSheet">
+                       <string notr="true">image: url(:/Images/pressure.png);
+
+border: none;
+background-color: transparent;
+</string>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_Pressure">
+                    <property name="styleSheet">
+                     <string notr="true">border: none;
+background-color: transparent;
+font-size: 40px; font-weight: bold;
+color: rgb(98, 221, 255);</string>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QWidget" name="widget_9" native="true">
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgba(255, 255, 255, 0.15);
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.3);</string>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_8">
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_8">
+                    <item>
+                     <widget class="QLabel" name="labelPlace_4">
+                      <property name="styleSheet">
+                       <string notr="true">border: none;
+background-color: transparent;
+font-size: 20px; font-weight: bold;
+color: rgb(177, 177, 177);</string>
+                      </property>
+                      <property name="text">
+                       <string>Wind Speed</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="label_5">
+                      <property name="styleSheet">
+                       <string notr="true">image: url(:/Images/icons8-windy-weather-96.png);
+
+border: none;
+background-color: transparent;
+</string>
+                      </property>
+                      <property name="text">
+                       <string/>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_wind">
+                    <property name="styleSheet">
+                     <string notr="true">border: none;
+color: rgb(98, 221, 255);
+background-color: transparent;
+font-size: 40px; font-weight: bold;
+</string>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="0" column="2">
+                <widget class="QWidget" name="widget_12" native="true">
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgba(255, 255, 255, 0.15);
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.3);</string>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_13">
+                  <property name="spacing">
+                   <number>40</number>
+                  </property>
+                  <property name="leftMargin">
+                   <number>30</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>30</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>30</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>30</number>
+                  </property>
+                  <item>
+                   <widget class="QWidget" name="widget_16" native="true">
+                    <property name="styleSheet">
+                     <string notr="true">border-radius: 50px;</string>
+                    </property>
+                    <layout class="QHBoxLayout" name="horizontalLayout_14">
+                     <item>
+                      <layout class="QHBoxLayout" name="horizontalLayout_13">
+                       <item>
+                        <widget class="QLabel" name="SunriseLabel">
+                         <property name="styleSheet">
+                          <string notr="true">
+border: none;
+background-color: transparent;
+font-size: 18px; font-weight: bold;
+color: rgb(98, 221, 255);</string>
+                         </property>
+                         <property name="text">
+                          <string>Sunrise: </string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLabel" name="label_16">
+                         <property name="styleSheet">
+                          <string notr="true">border: none;
+image: url(:/Images/icons8-sunrise-96.png);
+background-color: transparent;</string>
+                         </property>
+                         <property name="text">
+                          <string/>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QWidget" name="widget_18" native="true">
+                    <property name="styleSheet">
+                     <string notr="true">border-radius: 50px;</string>
+                    </property>
+                    <layout class="QHBoxLayout" name="horizontalLayout_16">
+                     <item>
+                      <layout class="QHBoxLayout" name="horizontalLayout_15">
+                       <item>
+                        <widget class="QLabel" name="SunsetLabel">
+                         <property name="styleSheet">
+                          <string notr="true">border: none;
+background-color: transparent;
+font-size: 18px; font-weight: bold;
+color: rgb(98, 221, 255);border: none;
+background-color: transparent;</string>
+                         </property>
+                         <property name="text">
+                          <string>Sunset</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLabel" name="label_18">
+                         <property name="styleSheet">
+                          <string notr="true">border: none;
+image: url(:/Images/icons8-sunset-96.png);
+background-color: transparent;</string>
+                         </property>
+                         <property name="text">
+                          <string/>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item row="1" column="2">
+                <widget class="QWidget" name="widget_13" native="true">
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgba(255, 255, 255, 0.15);
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.3);</string>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_16">
+                  <property name="spacing">
+                   <number>40</number>
+                  </property>
+                  <property name="leftMargin">
+                   <number>30</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>30</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>30</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>30</number>
+                  </property>
+                  <item>
+                   <widget class="QWidget" name="widget_19" native="true">
+                    <property name="styleSheet">
+                     <string notr="true">border-radius: 50px;</string>
+                    </property>
+                    <layout class="QHBoxLayout" name="horizontalLayout_17">
+                     <item>
+                      <layout class="QHBoxLayout" name="horizontalLayout_18">
+                       <item>
+                        <widget class="QLabel" name="MaxTemplabel">
+                         <property name="styleSheet">
+                          <string notr="true">border: none;
+background-color: transparent;
+font-size: 18px; font-weight: bold;
+color: rgb(98, 221, 255);</string>
+                         </property>
+                         <property name="text">
+                          <string>Max Temp:</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLabel" name="label_20">
+                         <property name="styleSheet">
+                          <string notr="true">border: none;
+image: url(:/Images/icons8-temperature-96.png);
+background-color: transparent;</string>
+                         </property>
+                         <property name="text">
+                          <string/>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QWidget" name="widget_20" native="true">
+                    <property name="styleSheet">
+                     <string notr="true">border-radius: 50px;</string>
+                    </property>
+                    <layout class="QHBoxLayout" name="horizontalLayout_19">
+                     <item>
+                      <layout class="QHBoxLayout" name="horizontalLayout_20">
+                       <item>
+                        <widget class="QLabel" name="MinTemplabel">
+                         <property name="styleSheet">
+                          <string notr="true">border: none;
+background-color: transparent;
+font-size: 18px; font-weight: bold;
+color: rgb(98, 221, 255);</string>
+                         </property>
+                         <property name="text">
+                          <string>Min Temp:</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLabel" name="label_22">
+                         <property name="styleSheet">
+                          <string notr="true">border: none;
+image: url(:/Images/icons8-cold-96 (1).png);
+background-color: transparent;</string>
+                         </property>
+                         <property name="text">
+                          <string/>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="tab_4">
+         <attribute name="title">
+          <string>Forecast</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout_17" stretch="55,45">
+          <item>
+           <widget class="QWidget" name="ForecastWidget" native="true">
+            <property name="styleSheet">
+             <string notr="true">background-color: rgba(50, 150, 230, 0.12);
+
+
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.3);</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_19" stretch="80,20">
+             <property name="spacing">
+              <number>2</number>
+             </property>
+             <item>
+              <widget class="QWidget" name="HourlyweatherWidget" native="true">
+               <property name="styleSheet">
+                <string notr="true">background-color: transparent;
+
+
+
+        border: none;</string>
+               </property>
+               <layout class="QHBoxLayout" name="horizontalLayout_24">
+                <item>
+                 <layout class="QHBoxLayout" name="houlylayout"/>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_21">
+               <property name="spacing">
+                <number>20</number>
+               </property>
+               <item>
+                <widget class="QPushButton" name="Day1btn">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton {
+             background: rgb(113, 175, 247);
+border: none;
+color: black;
+
+        }
+        QPushButton:hover {
+              background: qlineargradient(
+        x1: 0, y1: 0, x2: 1, y2: 1,
+        stop: 0 rgb(200, 200, 255),
+        stop: 0.22 rgb(50, 155, 255),
+        stop: 1 rgb(67, 155, 255)
+    );
+        }
+QPushButton:checked {
+       background: qlineargradient(
+        x1: 0, y1: 0, x2: 1, y2: 1,
+        stop: 0 rgb(200, 200, 255),
+        stop: 0.22 rgb(50, 155, 255),
+        stop: 1 rgb(67, 155, 255)
+    );
+    color: white;
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>Today</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="Day2btn">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton {
+             background: rgb(113, 175, 247);
+border: none;
+color: black;
+
+        }
+        QPushButton:hover {
+              background: qlineargradient(
+        x1: 0, y1: 0, x2: 1, y2: 1,
+        stop: 0 rgb(200, 200, 255),
+        stop: 0.22 rgb(50, 155, 255),
+        stop: 1 rgb(67, 155, 255)
+    );
+        }
+QPushButton:checked {
+       background: qlineargradient(
+        x1: 0, y1: 0, x2: 1, y2: 1,
+        stop: 0 rgb(200, 200, 255),
+        stop: 0.22 rgb(50, 155, 255),
+        stop: 1 rgb(67, 155, 255)
+    );
+    color: white;
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>Tomorrow</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="Day3btn">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton {
+             background: rgb(113, 175, 247);
+border: none;
+color: black;
+
+        }
+        QPushButton:hover {
+              background: qlineargradient(
+        x1: 0, y1: 0, x2: 1, y2: 1,
+        stop: 0 rgb(200, 200, 255),
+        stop: 0.22 rgb(50, 155, 255),
+        stop: 1 rgb(67, 155, 255)
+    );
+        }
+QPushButton:checked {
+       background: qlineargradient(
+        x1: 0, y1: 0, x2: 1, y2: 1,
+        stop: 0 rgb(200, 200, 255),
+        stop: 0.22 rgb(50, 155, 255),
+        stop: 1 rgb(67, 155, 255)
+    );
+    color: white;
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>PushButton</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="Day4btn">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton {
+             background: rgb(113, 175, 247);
+border: none;
+color: black;
+
+        }
+        QPushButton:hover {
+              background: qlineargradient(
+        x1: 0, y1: 0, x2: 1, y2: 1,
+        stop: 0 rgb(200, 200, 255),
+        stop: 0.22 rgb(50, 155, 255),
+        stop: 1 rgb(67, 155, 255)
+    );
+        }
+QPushButton:checked {
+       background: qlineargradient(
+        x1: 0, y1: 0, x2: 1, y2: 1,
+        stop: 0 rgb(200, 200, 255),
+        stop: 0.22 rgb(50, 155, 255),
+        stop: 1 rgb(67, 155, 255)
+    );
+    color: white;
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>PushButton</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="Day5btn">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton {
+             background: rgb(113, 175, 247);
+border: none;
+color: black;
+
+        }
+        QPushButton:hover {
+              background: qlineargradient(
+        x1: 0, y1: 0, x2: 1, y2: 1,
+        stop: 0 rgb(200, 200, 255),
+        stop: 0.22 rgb(50, 155, 255),
+        stop: 1 rgb(67, 155, 255)
+    );
+        }
+QPushButton:checked {
+       background: qlineargradient(
+        x1: 0, y1: 0, x2: 1, y2: 1,
+        stop: 0 rgb(200, 200, 255),
+        stop: 0.22 rgb(50, 155, 255),
+        stop: 1 rgb(67, 155, 255)
+    );
+    color: white;
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>PushButton</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="50,50">
+            <item>
+             <widget class="QWidget" name="widget" native="true">
+              <layout class="QHBoxLayout" name="horizontalLayout_22">
+               <property name="leftMargin">
+                <number>11</number>
+               </property>
+               <property name="topMargin">
+                <number>2</number>
+               </property>
+               <property name="rightMargin">
+                <number>11</number>
+               </property>
+               <property name="bottomMargin">
+                <number>2</number>
+               </property>
+               <item>
+                <layout class="QHBoxLayout" name="Tempgraphlayout"/>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QWidget" name="widget_3" native="true">
+              <layout class="QVBoxLayout" name="verticalLayout_18">
+               <property name="topMargin">
+                <number>2</number>
+               </property>
+               <property name="bottomMargin">
+                <number>2</number>
+               </property>
+               <item>
+                <layout class="QHBoxLayout" name="MinMaxLayout"/>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="tab_5">
+         <property name="styleSheet">
+          <string notr="true">border: none;
+
+
+background-color: rgba(50, 150, 220, 0.40);</string>
+         </property>
+         <attribute name="title">
+          <string>Air Quality</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout_12" stretch="40,60">
+          <item>
+           <widget class="QWidget" name="widget_14" native="true">
+            <property name="styleSheet">
+             <string notr="true">border: none;
+
+
+background-color: transparent;</string>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_10" stretch="60">
+             <property name="spacing">
+              <number>25</number>
+             </property>
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_15" stretch="70,30">
+               <property name="spacing">
+                <number>50</number>
+               </property>
+               <item>
+                <layout class="QVBoxLayout" name="verticalLayout_10" stretch="10,90">
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <property name="leftMargin">
+                  <number>200</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>200</number>
+                 </property>
+                 <item>
+                  <widget class="QLabel" name="label_6">
+                   <property name="styleSheet">
+                    <string notr="true">border: none;
+background-color: transparent;
+font-size: 16px; font-weight: bold;
+color: white;</string>
+                   </property>
+                   <property name="text">
+                    <string>AQI</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="labelAqiUs">
+                   <property name="styleSheet">
+                    <string notr="true">
+
+font-size: 50px; font-weight: bold;
+color: white;
+background-color: rgba(43, 54, 255, 0.12);
+
+
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.3);</string>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QVBoxLayout" name="verticalLayout_14" stretch="10,90">
+                 <property name="spacing">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <widget class="QLabel" name="label_11">
+                   <property name="styleSheet">
+                    <string notr="true">border: none;
+background-color: transparent;
+font-size: 16px; font-weight: bold;
+color: white;</string>
+                   </property>
+                   <property name="text">
+                    <string>Main Pollutant</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_MailPollutant">
+                   <property name="styleSheet">
+                    <string notr="true">border: none;
+background-color: transparent;
+font-size: 25px; font-weight: bold;
+color: white;</string>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QWidget" name="widget_15" native="true">
+            <property name="styleSheet">
+             <string notr="true">background-color: transparent;</string>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_11" stretch="50">
+             <property name="spacing">
+              <number>25</number>
+             </property>
+             <item>
+              <layout class="QVBoxLayout" name="GaugeLayout">
+               <item>
+                <widget class="QWidget" name="widget_17" native="true">
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgba(255, 255, 255, 0.15);
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.3);</string>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_12" stretch="80,20">
+                  <item>
+                   <layout class="QVBoxLayout" name="Gaugeaqilayout"/>
+                  </item>
+                  <item>
+                   <layout class="QVBoxLayout" name="verticalLayout_11">
+                    <item>
+                     <layout class="QHBoxLayout" name="GoodConditionLayout">
+                      <item>
+                       <widget class="QLabel" name="label_4">
+                        <property name="styleSheet">
+                         <string notr="true">color: white;background-color: transparent;
+border: none;
+font-size: 16px; font-weight: bold;</string>
+                        </property>
+                        <property name="text">
+                         <string> 0-50  (Good)  </string>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </item>
+                    <item>
+                     <layout class="QHBoxLayout" name="SatisfactoryConditionLayout">
+                      <item>
+                       <widget class="QLabel" name="label_8">
+                        <property name="styleSheet">
+                         <string notr="true">color: white;font-size: 16px; font-weight: bold;background-color: transparent;
+border: none;</string>
+                        </property>
+                        <property name="text">
+                         <string>50-100  (Satisfactory)</string>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </item>
+                    <item>
+                     <layout class="QHBoxLayout" name="ModerateConditionLayout">
+                      <item>
+                       <widget class="QLabel" name="label_9">
+                        <property name="styleSheet">
+                         <string notr="true">color: white;font-size: 16px; font-weight: bold;background-color: transparent;
+border: none;</string>
+                        </property>
+                        <property name="text">
+                         <string>100-150  (Moderate)</string>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </item>
+                    <item>
+                     <layout class="QHBoxLayout" name="PoorConditionLayout">
+                      <item>
+                       <widget class="QLabel" name="label_10">
+                        <property name="styleSheet">
+                         <string notr="true">color: white;font-size: 16px; font-weight: bold;background-color: transparent;
+border: none;</string>
+                        </property>
+                        <property name="text">
+                         <string>150-200  (Poor)</string>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </item>
+                    <item>
+                     <layout class="QHBoxLayout" name="VPoorConditionLayout">
+                      <item>
+                       <widget class="QLabel" name="label_12">
+                        <property name="styleSheet">
+                         <string notr="true">color: white;font-size: 16px; font-weight: bold;background-color: transparent;
+border: none;</string>
+                        </property>
+                        <property name="text">
+                         <string>200-300  (Very Poor)</string>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </item>
+                    <item>
+                     <layout class="QHBoxLayout" name="HazardousConditionLayout">
+                      <item>
+                       <widget class="QLabel" name="label_13">
+                        <property name="styleSheet">
+                         <string notr="true">color: white;font-size: 16px; font-weight: bold;background-color: transparent;
+border: none;</string>
+                        </property>
+                        <property name="text">
+                         <string>300-500  (Hazardous)</string>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </item>
+                   </layout>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
