@@ -15,5 +15,27 @@
         <file>Images/wind.png</file>
         <file>Images/pressure.png</file>
         <file>Images/icons8-search-50.png</file>
+        <file>Images/icons8-sunrise-96.png</file>
+        <file>Images/icons8-sunset-96.png</file>
+        <file>Images/icons8-cold-96 (1).png</file>
+        <file>Images/icons8-temperature-96.png</file>
+        <file>Images/clear-sky.png</file>
+        <file>Images/cloudy (1).png</file>
+        <file>Images/cloudy (2).png</file>
+        <file>Images/cloudy.png</file>
+        <file>Images/fog.png</file>
+        <file>Images/icons8-cloud-with-rain-96.png</file>
+        <file>Images/icons8-haze-100.png</file>
+        <file>Images/icons8-light-rain-96.png</file>
+        <file>Images/icons8-smoke-96.png</file>
+        <file>Images/icons8-storm-96.png</file>
+        <file>Images/mist.png</file>
+        <file>Images/stratuscumulus.png</file>
+        <file>Images/overcast.png</file>
+        <file>Images/icons8-dust-100.png</file>
+        <file>Images/night (2).png</file>
+        <file>Images/icons8-visibility-100.png</file>
+        <file>Images/icons8-windy-weather-96.png</file>
+        <file>Images/weather_43796 (2).ico</file>
     </qresource>
 </RCC>

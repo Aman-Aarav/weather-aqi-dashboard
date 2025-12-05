@@ -10,6 +10,7 @@
 #include <QNetworkRequest>
 #include <QNetworkReply>
 #include <QUrlQuery>
+
 struct WeatherData {
     // Location
     QString city;
@@ -70,7 +71,50 @@ struct AqiData
     QString state;
     QString country;
 };
+struct WeatherInfo {
+    int id;
+    QString Weathermain;
+    QString description;
+    QString icon;
+};
 
+struct MainInfo {
+    double temp;
+    double feels_like;
+    double temp_min;
+    double temp_max;
+    int pressure;
+    int humidity;
+    int sea_level;
+    int grnd_level;
+};
+
+struct WindInfo {
+    double speed;
+    int deg;
+    double gust;   // may be missing → set to 0
+};
+
+struct CloudsInfo {
+    int all;
+};
+
+struct SysInfo {
+    QString country;
+    long sunrise;
+    long sunset;
+};
+
+struct ForecastEntry {
+    long dt; //timestamp
+    QString dt_txt;       // datetime string
+    MainInfo Weathermain;
+    WeatherInfo weather;
+    WindInfo wind;
+    CloudsInfo clouds;
+    SysInfo sys;
+    int visibility;
+};
 
 class WeatherClient: public QObject
 {
@@ -86,6 +130,10 @@ private:
     QString AqiToken;
     void updateCurrentWeather(const QJsonObject &data);
     int calcAqiUS_PM25(double c);
+    static QVector<ForecastEntry> parseForecast(const QByteArray &data);
+    void handleNetworkError(QNetworkReply *reply);
+    void handleHttpError(int statusCode, QNetworkReply *reply);
+
 
 
 private slots:
@@ -94,10 +142,13 @@ private slots:
     void onWeatherDataReceived(QNetworkReply *reply);
     void onForecastDataReceived(QNetworkReply *reply);
     void onAQIDataReceived(QNetworkReply *reply);
+    QVector<ForecastEntry> parseDataForecast(const QByteArray &data);
 
 signals:
     void WeatherCurrentDataReady(const WeatherData &data);
     void AQIDataReady(const AqiData &data);
+    void ForecastDataReady(const QVector<ForecastEntry> &data);
+    void enablebtn();
 
 
 

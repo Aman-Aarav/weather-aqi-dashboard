@@ -37,7 +37,7 @@ void GaugeWidget::paintEvent(QPaintEvent *)
     QPainter p(this);
     p.setRenderHint(QPainter::Antialiasing);
 
-    // calculate drawing rect (make it wide but not too tall)
+    // calculate drawing rect (making it wide but not too tall)
     const int margin = 38;
     int w = width() - 2 * margin;
     int h = height() - 2 * margin;
@@ -47,7 +47,7 @@ void GaugeWidget::paintEvent(QPaintEvent *)
 
 
 
-    // Draw outer white gauge "frame"
+    // Draw outer white gauge frame
     QRectF innerRect = arcRect.adjusted(12,12, -12, -12);
 
     // Colored segments
@@ -90,14 +90,14 @@ void GaugeWidget::drawColoredSegments(QPainter &p, const QRectF &rect)
         pen.setColor(s.c);
         p.setPen(pen);
 
-        // arcTo expects startAngle degrees measured from 3 O'clock counterclockwise
-        // We computed angles measured from 3 O'clock as well (valueToAngleDeg uses that)
+        // arcto expects startAngle degrees measured from 3 O'clock counterclockwise
+        // We computed angles measured from 3 O'clock as well, valueToAngleDeg uses that
         // Use QPainterPath::arcTo to draw with a pen
         QPainterPath path;
         QRectF r = rect;
         // we want the arc centered on rect; use arc on a rectangle slightly larger because pen has width
         path.moveTo(rect.center());
-        // create a thin arc path by using stroked path is simpler: draw using drawArc with pen
+        // creating a thin arc path by using stroked path is simpler: draw using drawArc with pen
         // drawArc expects angles in 1/16 deg
         int start16 = int(angleStart * 16.0);
         int span16  = int(sweep * 16.0);

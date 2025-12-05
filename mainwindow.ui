@@ -108,7 +108,13 @@ border: 2px solid #404040;
          </layout>
         </item>
         <item>
-         <widget class="QPushButton" name="dayNightBtn">
+         <widget class="QLabel" name="label_14">
+          <property name="minimumSize">
+           <size>
+            <width>100</width>
+            <height>0</height>
+           </size>
+          </property>
           <property name="text">
            <string/>
           </property>
@@ -129,14 +135,14 @@ QTabBar::tab {
     background:rgba(67, 97, 136, 1);
     border: 0.5px solid #C4C4C3;
 
-    padding: 2px;
+    padding: 2px 50px;
 color: white;
 }
 
 QTabBar::tab:selected, QTabBar::tab:hover {
    background-color: rgba(52, 148, 189, 1);
  color: white;
-  border: 1px solid rgba(0, 255, 225, 1);
+  border: 1px solid rgba(80, 255, 225, 1);
   font-weight: bold;          /* Bold font for the selected tab */
 
 }
@@ -150,7 +156,7 @@ QTabBar::tab:!selected {
 }</string>
         </property>
         <property name="currentIndex">
-         <number>2</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="tab_3">
          <property name="styleSheet">
@@ -176,12 +182,13 @@ background-color: transparent;
               <widget class="QLabel" name="labelPlace">
                <property name="styleSheet">
                 <string notr="true">border: none;
+color: rgb(177, 177, 177);
 background-color: transparent;
 font-size: 20px; font-weight: bold;
-color: white;</string>
+</string>
                </property>
                <property name="text">
-                <string>Delhi</string>
+                <string/>
                </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
@@ -194,7 +201,7 @@ color: white;</string>
                 <string notr="true">background-color: transparent;
 border: none</string>
                </property>
-               <layout class="QVBoxLayout" name="verticalLayout_3" stretch="20,55,20,5">
+               <layout class="QVBoxLayout" name="verticalLayout_3" stretch="25,45,25,5">
                 <property name="spacing">
                  <number>0</number>
                 </property>
@@ -208,11 +215,12 @@ border: none</string>
                  <widget class="QLabel" name="WeatherType">
                   <property name="styleSheet">
                    <string notr="true">border: none;
+color: rgb(98, 221, 255);
 background-color: transparent;
 font-size: 40px; font-weight: bold;</string>
                   </property>
                   <property name="text">
-                   <string>SnowFall</string>
+                   <string>Weather</string>
                   </property>
                   <property name="alignment">
                    <set>Qt::AlignCenter</set>
@@ -223,7 +231,7 @@ font-size: 40px; font-weight: bold;</string>
                  <widget class="QLabel" name="IconLabel">
                   <property name="styleSheet">
                    <string notr="true">border: none;
-image: url(:/Images/snowfall.png);
+
 background-color: transparent;
 </string>
                   </property>
@@ -238,10 +246,10 @@ background-color: transparent;
                    <string notr="true">border: none;
 background-color: transparent;
 font-size: 30px; font-weight: bold;
-color: white;</string>
+color: rgb(98, 221, 255);</string>
                   </property>
                   <property name="text">
-                   <string>27°C</string>
+                   <string/>
                   </property>
                   <property name="alignment">
                    <set>Qt::AlignCenter</set>
@@ -254,10 +262,10 @@ color: white;</string>
                    <string notr="true">border: none;
 background-color: transparent;
 font-size: 15px; font-weight: bold;
-color: white;</string>
+color: rgb(177, 177, 177);</string>
                   </property>
                   <property name="text">
-                   <string>Feels Like:  23°C</string>
+                   <string/>
                   </property>
                   <property name="alignment">
                    <set>Qt::AlignCenter</set>
@@ -284,7 +292,7 @@ background-color: transparent;
 color: white;</string>
                   </property>
                   <property name="text">
-                   <string>Wdnesday, 12 Nov</string>
+                   <string/>
                   </property>
                   <property name="alignment">
                    <set>Qt::AlignCenter</set>
@@ -337,7 +345,7 @@ color: white;</string>
                        <string notr="true">border: none;
 background-color: transparent;
 font-size: 20px; font-weight: bold;
-color: white;</string>
+color: rgb(177, 177, 177);</string>
                       </property>
                       <property name="text">
                        <string>Visibility</string>
@@ -350,7 +358,8 @@ color: white;</string>
                     <item>
                      <widget class="QLabel" name="label_7">
                       <property name="styleSheet">
-                       <string notr="true">image: url(:/Images/visibility (1).png);
+                       <string notr="true">
+image: url(:/Images/icons8-visibility-100.png);
 
 border: none;
 background-color: transparent;
@@ -368,8 +377,8 @@ background-color: transparent;
                     <property name="styleSheet">
                      <string notr="true">border: none;
 background-color: transparent;
-font-size: 50px; font-weight: bold;
-color: white;</string>
+font-size: 40px; font-weight: bold;
+color: rgb(98, 221, 255);</string>
                     </property>
                     <property name="text">
                      <string/>
@@ -398,7 +407,7 @@ color: white;</string>
                        <string notr="true">border: none;
 background-color: transparent;
 font-size: 20px; font-weight: bold;
-color: white;</string>
+color: rgb(177, 177, 177);</string>
                       </property>
                       <property name="text">
                        <string>Humidity</string>
@@ -428,8 +437,9 @@ background-color: transparent;
                     <property name="styleSheet">
                      <string notr="true">border: none;
 background-color: transparent;
-font-size: 50px; font-weight: bold;
-color: white;</string>
+font-size: 40px; font-weight: bold;
+
+color: rgb(98, 221, 255);</string>
                     </property>
                     <property name="text">
                      <string/>
@@ -458,7 +468,7 @@ color: white;</string>
                        <string notr="true">border: none;
 background-color: transparent;
 font-size: 20px; font-weight: bold;
-color: white;</string>
+color: rgb(177, 177, 177);</string>
                       </property>
                       <property name="text">
                        <string>Pressure</string>
@@ -489,8 +499,8 @@ background-color: transparent;
                     <property name="styleSheet">
                      <string notr="true">border: none;
 background-color: transparent;
-font-size: 50px; font-weight: bold;
-color: white;</string>
+font-size: 40px; font-weight: bold;
+color: rgb(98, 221, 255);</string>
                     </property>
                     <property name="text">
                      <string/>
@@ -519,7 +529,7 @@ color: white;</string>
                        <string notr="true">border: none;
 background-color: transparent;
 font-size: 20px; font-weight: bold;
-color: white;</string>
+color: rgb(177, 177, 177);</string>
                       </property>
                       <property name="text">
                        <string>Wind Speed</string>
@@ -532,7 +542,7 @@ color: white;</string>
                     <item>
                      <widget class="QLabel" name="label_5">
                       <property name="styleSheet">
-                       <string notr="true">image: url(:/Images/wind.png);
+                       <string notr="true">image: url(:/Images/icons8-windy-weather-96.png);
 
 border: none;
 background-color: transparent;
@@ -549,9 +559,10 @@ background-color: transparent;
                    <widget class="QLabel" name="label_wind">
                     <property name="styleSheet">
                      <string notr="true">border: none;
+color: rgb(98, 221, 255);
 background-color: transparent;
-font-size: 50px; font-weight: bold;
-color: white;</string>
+font-size: 40px; font-weight: bold;
+</string>
                     </property>
                     <property name="text">
                      <string/>
@@ -571,6 +582,101 @@ color: white;</string>
         border-radius: 15px;
         border: 1px solid rgba(255, 255, 255, 0.3);</string>
                  </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_13">
+                  <property name="spacing">
+                   <number>40</number>
+                  </property>
+                  <property name="leftMargin">
+                   <number>30</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>30</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>30</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>30</number>
+                  </property>
+                  <item>
+                   <widget class="QWidget" name="widget_16" native="true">
+                    <property name="styleSheet">
+                     <string notr="true">border-radius: 50px;</string>
+                    </property>
+                    <layout class="QHBoxLayout" name="horizontalLayout_14">
+                     <item>
+                      <layout class="QHBoxLayout" name="horizontalLayout_13">
+                       <item>
+                        <widget class="QLabel" name="SunriseLabel">
+                         <property name="styleSheet">
+                          <string notr="true">
+border: none;
+background-color: transparent;
+font-size: 18px; font-weight: bold;
+color: rgb(98, 221, 255);</string>
+                         </property>
+                         <property name="text">
+                          <string>Sunrise: </string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLabel" name="label_16">
+                         <property name="styleSheet">
+                          <string notr="true">border: none;
+image: url(:/Images/icons8-sunrise-96.png);
+background-color: transparent;</string>
+                         </property>
+                         <property name="text">
+                          <string/>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QWidget" name="widget_18" native="true">
+                    <property name="styleSheet">
+                     <string notr="true">border-radius: 50px;</string>
+                    </property>
+                    <layout class="QHBoxLayout" name="horizontalLayout_16">
+                     <item>
+                      <layout class="QHBoxLayout" name="horizontalLayout_15">
+                       <item>
+                        <widget class="QLabel" name="SunsetLabel">
+                         <property name="styleSheet">
+                          <string notr="true">border: none;
+background-color: transparent;
+font-size: 18px; font-weight: bold;
+color: rgb(98, 221, 255);border: none;
+background-color: transparent;</string>
+                         </property>
+                         <property name="text">
+                          <string>Sunset</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLabel" name="label_18">
+                         <property name="styleSheet">
+                          <string notr="true">border: none;
+image: url(:/Images/icons8-sunset-96.png);
+background-color: transparent;</string>
+                         </property>
+                         <property name="text">
+                          <string/>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                 </layout>
                 </widget>
                </item>
                <item row="1" column="2">
@@ -580,6 +686,99 @@ color: white;</string>
         border-radius: 15px;
         border: 1px solid rgba(255, 255, 255, 0.3);</string>
                  </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_16">
+                  <property name="spacing">
+                   <number>40</number>
+                  </property>
+                  <property name="leftMargin">
+                   <number>30</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>30</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>30</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>30</number>
+                  </property>
+                  <item>
+                   <widget class="QWidget" name="widget_19" native="true">
+                    <property name="styleSheet">
+                     <string notr="true">border-radius: 50px;</string>
+                    </property>
+                    <layout class="QHBoxLayout" name="horizontalLayout_17">
+                     <item>
+                      <layout class="QHBoxLayout" name="horizontalLayout_18">
+                       <item>
+                        <widget class="QLabel" name="MaxTemplabel">
+                         <property name="styleSheet">
+                          <string notr="true">border: none;
+background-color: transparent;
+font-size: 18px; font-weight: bold;
+color: rgb(98, 221, 255);</string>
+                         </property>
+                         <property name="text">
+                          <string>Max Temp:</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLabel" name="label_20">
+                         <property name="styleSheet">
+                          <string notr="true">border: none;
+image: url(:/Images/icons8-temperature-96.png);
+background-color: transparent;</string>
+                         </property>
+                         <property name="text">
+                          <string/>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QWidget" name="widget_20" native="true">
+                    <property name="styleSheet">
+                     <string notr="true">border-radius: 50px;</string>
+                    </property>
+                    <layout class="QHBoxLayout" name="horizontalLayout_19">
+                     <item>
+                      <layout class="QHBoxLayout" name="horizontalLayout_20">
+                       <item>
+                        <widget class="QLabel" name="MinTemplabel">
+                         <property name="styleSheet">
+                          <string notr="true">border: none;
+background-color: transparent;
+font-size: 18px; font-weight: bold;
+color: rgb(98, 221, 255);</string>
+                         </property>
+                         <property name="text">
+                          <string>Min Temp:</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLabel" name="label_22">
+                         <property name="styleSheet">
+                          <string notr="true">border: none;
+image: url(:/Images/icons8-cold-96 (1).png);
+background-color: transparent;</string>
+                         </property>
+                         <property name="text">
+                          <string/>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                 </layout>
                 </widget>
                </item>
               </layout>
@@ -591,59 +790,294 @@ color: white;</string>
         </widget>
         <widget class="QWidget" name="tab_4">
          <attribute name="title">
-          <string>Tab 2</string>
+          <string>Forecast</string>
          </attribute>
-         <widget class="QWidget" name="widget" native="true">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>10</y>
-            <width>431</width>
-            <height>461</height>
-           </rect>
-          </property>
-          <layout class="QHBoxLayout" name="horizontalLayout_2">
-           <item>
-            <layout class="QGridLayout" name="gridLayout">
-             <item row="0" column="0">
-              <widget class="QWidget" name="widget_2" native="true"/>
+         <layout class="QVBoxLayout" name="verticalLayout_17" stretch="55,45">
+          <item>
+           <widget class="QWidget" name="ForecastWidget" native="true">
+            <property name="styleSheet">
+             <string notr="true">background-color: rgba(50, 150, 230, 0.12);
+
+
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.3);</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_19" stretch="80,20">
+             <property name="spacing">
+              <number>2</number>
+             </property>
+             <item>
+              <widget class="QWidget" name="HourlyweatherWidget" native="true">
+               <property name="styleSheet">
+                <string notr="true">background-color: transparent;
+
+
+
+        border: none;</string>
+               </property>
+               <layout class="QHBoxLayout" name="horizontalLayout_24">
+                <item>
+                 <layout class="QHBoxLayout" name="houlylayout"/>
+                </item>
+               </layout>
+              </widget>
              </item>
-             <item row="0" column="1">
-              <widget class="QWidget" name="widget_4" native="true"/>
-             </item>
-             <item row="1" column="0">
-              <widget class="QWidget" name="widget_3" native="true"/>
-             </item>
-             <item row="1" column="1">
-              <widget class="QWidget" name="widget_5" native="true"/>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_21">
+               <property name="spacing">
+                <number>20</number>
+               </property>
+               <item>
+                <widget class="QPushButton" name="Day1btn">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton {
+             background: rgb(113, 175, 247);
+border: none;
+color: black;
+
+        }
+        QPushButton:hover {
+              background: qlineargradient(
+        x1: 0, y1: 0, x2: 1, y2: 1,
+        stop: 0 rgb(200, 200, 255),
+        stop: 0.22 rgb(50, 155, 255),
+        stop: 1 rgb(67, 155, 255)
+    );
+        }
+QPushButton:checked {
+       background: qlineargradient(
+        x1: 0, y1: 0, x2: 1, y2: 1,
+        stop: 0 rgb(200, 200, 255),
+        stop: 0.22 rgb(50, 155, 255),
+        stop: 1 rgb(67, 155, 255)
+    );
+    color: white;
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>Today</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="Day2btn">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton {
+             background: rgb(113, 175, 247);
+border: none;
+color: black;
+
+        }
+        QPushButton:hover {
+              background: qlineargradient(
+        x1: 0, y1: 0, x2: 1, y2: 1,
+        stop: 0 rgb(200, 200, 255),
+        stop: 0.22 rgb(50, 155, 255),
+        stop: 1 rgb(67, 155, 255)
+    );
+        }
+QPushButton:checked {
+       background: qlineargradient(
+        x1: 0, y1: 0, x2: 1, y2: 1,
+        stop: 0 rgb(200, 200, 255),
+        stop: 0.22 rgb(50, 155, 255),
+        stop: 1 rgb(67, 155, 255)
+    );
+    color: white;
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>Tomorrow</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="Day3btn">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton {
+             background: rgb(113, 175, 247);
+border: none;
+color: black;
+
+        }
+        QPushButton:hover {
+              background: qlineargradient(
+        x1: 0, y1: 0, x2: 1, y2: 1,
+        stop: 0 rgb(200, 200, 255),
+        stop: 0.22 rgb(50, 155, 255),
+        stop: 1 rgb(67, 155, 255)
+    );
+        }
+QPushButton:checked {
+       background: qlineargradient(
+        x1: 0, y1: 0, x2: 1, y2: 1,
+        stop: 0 rgb(200, 200, 255),
+        stop: 0.22 rgb(50, 155, 255),
+        stop: 1 rgb(67, 155, 255)
+    );
+    color: white;
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>PushButton</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="Day4btn">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton {
+             background: rgb(113, 175, 247);
+border: none;
+color: black;
+
+        }
+        QPushButton:hover {
+              background: qlineargradient(
+        x1: 0, y1: 0, x2: 1, y2: 1,
+        stop: 0 rgb(200, 200, 255),
+        stop: 0.22 rgb(50, 155, 255),
+        stop: 1 rgb(67, 155, 255)
+    );
+        }
+QPushButton:checked {
+       background: qlineargradient(
+        x1: 0, y1: 0, x2: 1, y2: 1,
+        stop: 0 rgb(200, 200, 255),
+        stop: 0.22 rgb(50, 155, 255),
+        stop: 1 rgb(67, 155, 255)
+    );
+    color: white;
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>PushButton</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="Day5btn">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QPushButton {
+             background: rgb(113, 175, 247);
+border: none;
+color: black;
+
+        }
+        QPushButton:hover {
+              background: qlineargradient(
+        x1: 0, y1: 0, x2: 1, y2: 1,
+        stop: 0 rgb(200, 200, 255),
+        stop: 0.22 rgb(50, 155, 255),
+        stop: 1 rgb(67, 155, 255)
+    );
+        }
+QPushButton:checked {
+       background: qlineargradient(
+        x1: 0, y1: 0, x2: 1, y2: 1,
+        stop: 0 rgb(200, 200, 255),
+        stop: 0.22 rgb(50, 155, 255),
+        stop: 1 rgb(67, 155, 255)
+    );
+    color: white;
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>PushButton</string>
+                 </property>
+                 <property name="checkable">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
              </item>
             </layout>
-           </item>
-          </layout>
-         </widget>
-         <widget class="QTabWidget" name="tabWidget">
-          <property name="geometry">
-           <rect>
-            <x>450</x>
-            <y>10</y>
-            <width>281</width>
-            <height>271</height>
-           </rect>
-          </property>
-          <property name="currentIndex">
-           <number>0</number>
-          </property>
-          <widget class="QWidget" name="tab">
-           <attribute name="title">
-            <string>Digital</string>
-           </attribute>
-          </widget>
-          <widget class="QWidget" name="tab_2">
-           <attribute name="title">
-            <string>Analog</string>
-           </attribute>
-          </widget>
-         </widget>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="50,50">
+            <item>
+             <widget class="QWidget" name="widget" native="true">
+              <layout class="QHBoxLayout" name="horizontalLayout_22">
+               <property name="leftMargin">
+                <number>11</number>
+               </property>
+               <property name="topMargin">
+                <number>2</number>
+               </property>
+               <property name="rightMargin">
+                <number>11</number>
+               </property>
+               <property name="bottomMargin">
+                <number>2</number>
+               </property>
+               <item>
+                <layout class="QHBoxLayout" name="Tempgraphlayout"/>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QWidget" name="widget_3" native="true">
+              <layout class="QVBoxLayout" name="verticalLayout_18">
+               <property name="topMargin">
+                <number>2</number>
+               </property>
+               <property name="bottomMargin">
+                <number>2</number>
+               </property>
+               <item>
+                <layout class="QHBoxLayout" name="MinMaxLayout"/>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
         </widget>
         <widget class="QWidget" name="tab_5">
          <property name="styleSheet">
@@ -704,9 +1138,11 @@ color: white;</string>
                   <widget class="QLabel" name="labelAqiUs">
                    <property name="styleSheet">
                     <string notr="true">
+
 font-size: 50px; font-weight: bold;
 color: white;
-background-color: rgba(152, 255, 56, 0.20);
+background-color: rgba(43, 54, 255, 0.12);
+
 
         border-radius: 15px;
         border: 1px solid rgba(255, 255, 255, 0.3);</string>

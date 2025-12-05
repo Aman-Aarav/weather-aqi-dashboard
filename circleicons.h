@@ -15,7 +15,7 @@ protected:
 
 private:
     int ledSize = 25;
-    QColor baseColor;    // << store the custom color
+    QColor baseColor;    //  store the custom color
 };
 
 #endif // CIRCLEICONS_H

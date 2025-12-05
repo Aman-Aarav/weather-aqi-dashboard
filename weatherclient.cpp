@@ -7,6 +7,37 @@ WeatherClient::WeatherClient(QObject *parent) : QObject(parent), networkManager(
 
     connect(networkManager, &QNetworkAccessManager::finished,
             this, [this](QNetworkReply *reply) {
+
+        //   Checking network error
+                if (reply->error() != QNetworkReply::NoError) {
+                    qDebug() << "Network error:" << reply->errorString()
+                             << "URL:" << reply->url();
+
+                    handleNetworkError(reply);
+                    reply->deleteLater();
+                    emit enablebtn();
+
+                    return;
+                }
+                //   Checking HTTP status code
+                int statusCode =
+                    reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
+
+                QString reason =
+                    reply->attribute(QNetworkRequest::HttpReasonPhraseAttribute).toString();
+
+                qDebug() << "HTTP Status:" << statusCode << reason;
+
+                if (statusCode < 200 || statusCode >= 300) {
+                    qDebug() << "HTTP error from server:" << statusCode << reply->url();
+                    handleHttpError(statusCode, reply);
+                    reply->deleteLater();
+                    emit enablebtn();
+
+                    return;
+                }
+
+
                 QString url = reply->url().toString();
                 if (url.contains("weather?")) {
                     onWeatherDataReceived(reply);
@@ -15,24 +46,62 @@ WeatherClient::WeatherClient(QObject *parent) : QObject(parent), networkManager(
                 }
                 else if (url.contains("airvisual")) {
                     onAQIDataReceived(reply);
-
-
+                }
+                else {
+                    qDebug() << "Unknown API endpoint:" << url;
                 }
     });
 }
+void WeatherClient::handleNetworkError(QNetworkReply *reply)
+{
+    switch (reply->error())
+    {
+    case QNetworkReply::HostNotFoundError:
+        qDebug() << "Host not found. Check internet or URL.";
+        break;
+
+    case QNetworkReply::TimeoutError:
+        qDebug() << "Request timed out.";
+        break;
+
+    case QNetworkReply::ConnectionRefusedError:
+        qDebug() << "Server refused connection.";
+        break;
+
+    default:
+        qDebug() << "Other network error:" << reply->errorString();
+        break;
+    }
+}
+void WeatherClient::handleHttpError(int statusCode, QNetworkReply *reply)
+{
+    if (statusCode == 401)
+        qDebug() << "Unauthorized - check API key";
+
+    else if (statusCode == 404)
+        qDebug() << "Endpoint not found:" << reply->url();
+
+    else if (statusCode >= 500)
+        qDebug() << "Server error:" << statusCode;
+
+    else
+        qDebug() << "HTTP error:" << statusCode;
+}
+
+
 void WeatherClient::fetchWeather(QString city) {
 
 
     if (city.isEmpty()) {
-        //QMessageBox::warning(this, "Input Error", "Please enter a city name.");
+        QMessageBox::information(nullptr, "Input Error", "Please enter a city name.");
+        emit enablebtn();
 
         return;
     }
 
     if (apiKey == "YOUR_API_KEY_HERE") {
-       // QMessageBox::warning(this, "API Key Required",
-         //                    "Please get a free API key from https://openweathermap.org/api");
 
+        emit enablebtn();
         return;
     }
 
@@ -64,34 +133,37 @@ void WeatherClient::onWeatherDataReceived(QNetworkReply *reply) {
 void WeatherClient::onForecastDataReceived(QNetworkReply *reply) {
     if (reply->error() == QNetworkReply::NoError) {
         QByteArray response = reply->readAll();
-        QJsonDocument jsonDoc = QJsonDocument::fromJson(response);
-        QJsonObject jsonObj = jsonDoc.object();
 
+        QVector<ForecastEntry> forecast = parseDataForecast(response);
 
-        if (jsonObj.contains("cod") && jsonObj["cod"].toString() == "200") {
-            QJsonArray forecastList = jsonObj["list"].toArray();
-            //updateHourlyForecast(jsonObj);
-            //updateDailyForecast(jsonObj);
-           // createTemperatureChart(forecastList);
-            //createWeeklyChart(forecastList);
+        for (const ForecastEntry &f : forecast) {
+            qDebug() << f.dt_txt << f.Weathermain.temp << f.weather.description;
         }
+        QString output;
+
+        for (const ForecastEntry &f : forecast) {
+            output += QString("Time: %1 | Temp: %2°C | Description: %3\n")
+                        .arg(f.dt_txt)
+                        .arg(f.Weathermain.temp)
+                        .arg(f.weather.description);
+        }
+        qDebug() <<"====================================" ;
+        qDebug() <<"Forecast Data:" <<  output;   // Print the full string
+        qDebug() <<"====================================" ;
+
     }
+
     reply->deleteLater();
 }
 void WeatherClient::onAQIDataReceived(QNetworkReply *reply)
 {
-    if (reply->error() != QNetworkReply::NoError) {
-        reply->deleteLater();
-        qInfo()<<"fgdfgsh";
-        return;
-    }
 
     QByteArray response = reply->readAll();
     QJsonDocument jsonDoc = QJsonDocument::fromJson(response);
 
     if (!jsonDoc.isObject()) {
         reply->deleteLater();
-        qInfo()<<"fgdfgshsdfs3";
+        qInfo()<<"empty json aqi";
         return;
     }
 
@@ -194,10 +266,74 @@ void WeatherClient::updateCurrentWeather(const QJsonObject &data) {
     wd.timezone = data["timezone"].toInt();
 
     // --- Example: use the data ---
+    qDebug() << "==============Current weather Data=============";
     qDebug() << "City:" << wd.city << wd.country;
     qDebug() << "Temp:" << wd.temp << "Feels Like:" << wd.feelsLike;
     qDebug() << "Weather:" << wd.Weathermain << "(" << wd.description << ")";
+    qDebug() << "==============Current weather Data=============";
     emit WeatherCurrentDataReady(wd);
 }
 
+QVector<ForecastEntry> WeatherClient::parseDataForecast(const QByteArray &data)
+{
+    QVector<ForecastEntry> result;
 
+    QJsonDocument doc = QJsonDocument::fromJson(data);
+    if (doc.isNull() || !doc.isObject())
+        return result;
+
+    QJsonObject root = doc.object();
+
+    QJsonArray listArray = root.value("list").toArray();
+
+
+    for (const QJsonValue &v : listArray) {
+        ForecastEntry entry;
+        QJsonObject obj = v.toObject();
+
+        entry.dt = obj.value("dt").toVariant().toLongLong();
+        entry.dt_txt = obj.value("dt_txt").toString();
+       // qInfo()<<entry.dt_txt;
+        entry.visibility = obj.value("visibility").toInt();
+
+        // ----- MAIN -----
+        QJsonObject m = obj["main"].toObject();
+        entry.Weathermain.temp        = m.value("temp").toDouble();
+        entry.Weathermain.feels_like  = m.value("feels_like").toDouble();
+        entry.Weathermain.temp_min    = m.value("temp_min").toDouble();
+        entry.Weathermain.temp_max    = m.value("temp_max").toDouble();
+        entry.Weathermain.pressure    = m.value("pressure").toInt();
+        entry.Weathermain.humidity    = m.value("humidity").toInt();
+        entry.Weathermain.sea_level   = m.value("sea_level").toInt();
+        entry.Weathermain.grnd_level  = m.value("grnd_level").toInt();
+
+        // ----- WEATHER -----
+        QJsonArray wArr = obj["weather"].toArray();
+        if (!wArr.isEmpty()) {
+            QJsonObject w = wArr.at(0).toObject();
+            entry.weather.id          = w.value("id").toInt();
+            entry.weather.Weathermain        = w.value("main").toString();
+            entry.weather.description = w.value("description").toString();
+            entry.weather.icon        = w.value("icon").toString();
+        }
+
+        // ----- WIND -----
+        QJsonObject wn = obj["wind"].toObject();
+        entry.wind.speed = wn.value("speed").toDouble();
+        entry.wind.deg   = wn.value("deg").toInt();
+        entry.wind.gust  = wn.value("gust").toDouble();  // may be missing
+
+        // ----- CLOUDS -----
+        entry.clouds.all = obj["clouds"].toObject().value("all").toInt();
+
+        // ----- SYS -----
+        QJsonObject s = obj["sys"].toObject();
+        entry.sys.country = s.value("country").toString();
+        entry.sys.sunrise = s.value("sunrise").toVariant().toLongLong();
+        entry.sys.sunset  = s.value("sunset").toVariant().toLongLong();
+
+        result.append(entry);
+    }
+    emit ForecastDataReady(result);
+    return result;
+}
